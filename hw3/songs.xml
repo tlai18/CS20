@@ -1,0 +1,116 @@
+<!-- Create a tag called <song> which will contain: the artist(s), title, music genre, and year the 
+song was released.  Songs must be able to have more than one genre and more than one 
+artist.
+ Your file must include at least 10 songs.  There must be at least 3 different genres and 3 
+different artists across all songs.  
+ The songs must be real.
+ Your XML file must be well-formed and valid.
+ Create a CSS file for an aesthetic display of the data. -->
+<?xml-stylesheet type="text/css" href="style.css"?>
+
+<songs>
+        <song>
+                <artists>
+                        <artist>Taylor Swift</artist>
+                </artists>
+                <title>22</title>
+                <genres>
+                        <genre>Pop</genre>
+                </genres>
+                <year>2012</year>
+        </song>
+        <song>
+                <artists>
+                        <artist>Lorde</artist>
+                </artists>
+                <title>Team</title>
+                <genres>
+                        <genre>Pop</genre>
+                </genres>
+                <year>2013</year>
+        </song>
+        <song>
+                <artists>
+                        <artist>Ariana Grande</artist>
+                </artists>
+                <title>One Last Time</title>
+                <genres>
+                        <genre>Pop</genre>
+                </genres>
+                <year>2014</year>
+        </song>
+         <song>
+                <artists>
+                        <artist>Ed Sheeran</artist>
+                </artists>
+                <title>The A Team</title>
+                <genres>
+                        <genre>Pop</genre>
+                </genres>
+                <year>2010</year>
+        </song>
+        <song>
+                <artists>
+                        <artist>Juice WRLD</artist>
+                </artists>
+                <title>Lucid Dreams</title>
+                <genres>
+                        <genre>Hip hop</genre>
+                </genres>
+                <year>2018</year>
+        </song>
+        <song>
+                <artists>
+                        <artist>XXXTENTACION</artist>
+                </artists>
+                <title>SAD!</title>
+                <genres>
+                        <genre>Hip hop</genre>
+                </genres>
+                <year>2018</year>
+        </song>
+        <song>
+                <artists>
+                        <artist>Travis Scott</artist>
+                </artists>
+                <title>Goosebumps</title>
+                <genres>
+                        <genre>Hip hop</genre>
+                </genres>
+                <year>2016</year>
+        </song>
+        <song>
+                <artists>
+                        <artist>Lil Uzi Vert</artist>
+                </artists>
+                <title>XO Tour Llif3</title>
+                <genres>
+                        <genre>Hip hop</genre>
+                </genres>
+                <year>2017</year>
+        </song>
+        <song>
+                <artists>
+                        <artist>Bad Bunny</artist>
+                </artists>
+                <title>Vete</title>
+                <genres>
+                        <genre>Latin</genre>
+                        <genre>Hip Hop</genre>
+                </genres>
+                <year>2020</year>
+        </song>
+        <song>
+                <artists>
+                        <artist>Bad Bunny</artist>
+                        <artist>Chencho Corleone</artist>
+                </artists>
+                <title>Me Porto Bonito</title>
+                <genres>
+                        <genre>Latin</genre>
+                        <genre>Hip Hop</genre>
+                </genres>
+                <year>2022</year>
+        </song>
+</songs>
+

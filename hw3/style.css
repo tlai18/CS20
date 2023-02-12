@@ -1,0 +1,27 @@
+songs {
+        background-color: #ffffff;
+        margin: 100px;
+        width: 33%;        
+        border-color: black;
+        border-style: solid; 
+        border-width: 2px; 
+        padding: 10px;
+}
+
+song {
+        display: block;
+        margin-bottom: 20px;
+        font-size: 20px;
+        border-style: solid; 
+        border-width: 2px; 
+        border-color: lightslategray;
+        padding: 20px;
+}
+
+artists, genres {
+        display: block;
+}
+
+artists {
+        font-size: 30px;
+}
