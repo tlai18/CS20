@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tic Tac Toe</title>
+        <link rel="stylesheet" href="style.css">    
+        <script>
+                // constants tic tac toe dimensions
+                ROWS = 3;
+                COLS = 3;
+
+                // store board
+                var board = 
+                [
+                        ["", "", ""],
+                        ["", "", ""],
+                        ["", "", ""]
+                ];
+
+                // store how many squares pressed
+                var count = 0;
+
+                // store first player to keep track who started
+                var firstPlayer = "PLAYER X";
+                
+                // set display board
+                const init = () => {
+                        s = '<div class="grid-container">'
+                        for (let i = 0; i < ROWS * COLS; i++)  {
+                                s += '<button class="grid-item" id="';
+                                s += i;
+                                s += '" type="button"';
+                                s += ' onclick="fillSquare(' + i + ', board, checkWin)"';
+                                s += '></button>';
+                        }
+                        s += '</div>';
+                        document.getElementById("grid").innerHTML = s;
+                };
+
+                // determine winner by analysing board
+                // "" - no winner
+                // X - player x winner
+                // O - player o winner
+                const checkWin = () => {
+                        // check for horizontal win
+                        for (let row = 0; row < ROWS; row++) {
+                                if (board[row][0] != "" && board[row][0] == board[row][1] && board[row][0] == board[row][2]) {
+                                        return board[row][0];
+                                }
+                        }
+
+                        // check for vertical win
+                        for (let col = 0; col < COLS; col++) {
+                                if (board[0][col] != "" && board[0][col] == board[1][col] && board[0][col] == board[2][col]) {
+                                        return board[0][col];
+                                }
+                        }
+
+                        // check for diagonal win
+                        if (board[0][0] != "" && board[0][0] == board[1][1] && board[0][0] == board[2][2]) {
+                                return board[0][0];
+                        }
+
+                        if (board[0][2] != "" && board[0][2] == board[1][1] && board[0][2] == board[2][0]) {
+                                return board[0][2];
+                        }  
+
+                        return "";
+                }
+
+                // player turn -> fill square appropriately when pressed
+                const fillSquare = (id, board, checkWin) => {
+                        winner = checkWin(board);
+                        if (winner == "") {
+                                // check if square is already marked 
+                                if (document.getElementById(id).innerHTML != "") {
+                                        return;
+                                }
+
+                                player = document.getElementById("player").innerHTML;
+                                if (player == "PLAYER X") {
+                                        // mark square
+                                        document.getElementById(id).innerHTML = "X";
+                                        // update board variable
+                                        board[parseInt(id/3)][id % 3] = "X";
+                                        // next player
+                                        document.getElementById("player").innerHTML = "PLAYER O";
+                                } else if (player == "PLAYER O") {
+                                        // mark square
+                                        document.getElementById(id).innerHTML = "O";
+                                        // update board variable
+                                        board[parseInt(id/3)][id % 3] = "O";
+                                        // next player
+                                        document.getElementById("player").innerHTML = "PLAYER X";
+                                } else {
+                                        alert("ERROR: fillSquare");
+                                }
+
+                                winner = checkWin(board);
+                                count++;
+
+                                // winner
+                                if (winner != "") {
+                                        gameOver(winner);
+                                }
+                                // tie
+                                else if (count == 9) {
+                                        gameOver("TIE");
+                                }
+                        } 
+                }
+
+                /* restart game, reset board and display board */
+                const restart = () => {
+                        // update all squares to unmarked
+                        for (let i = 0; i < ROWS * COLS; i++)  {
+                                document.getElementById(i).innerHTML = "";
+                        }
+                        
+                        // reset board
+                        board = 
+                        [
+                        ["", "", ""],
+                        ["", "", ""],
+                        ["", "", ""]
+                        ];
+
+                        count = 0;
+
+                        // player that went second now goes first
+                        if (firstPlayer == "PLAYER O") {
+                                document.getElementById("player").innerHTML = "PLAYER X";
+                                firstPlayer = "PLAYER X"
+
+                        } else if (firstPlayer == "PLAYER X") {
+                                document.getElementById("player").innerHTML = "PLAYER O";
+                                firstPlayer = "PLAYER O"
+                        } else {
+                                alert("ERROR w/ firstPlayer");
+                        }
+
+                        // hide play again button
+                        document.getElementById("restart").style.display = "none";
+                }
+
+                // announce winner and show play again
+                const gameOver = (winner) => {
+                        if (winner == "TIE") {
+                                document.getElementById("player").innerHTML = winner;
+                        } else {
+                                document.getElementById("player").innerHTML = "PLAYER " + winner + " WON!";
+                        }
+                        document.getElementById("restart").style.display = "block";
+                }
+
+                // execute script after page loads
+                window.onload = () => {
+                        init();
+                }
+        </script>
+</head>
+<body>
+        <div class="container">
+                <div class="title-text">TIC TAC TOE</div>
+                <hr>
+                <div class="player-text" id="player">PLAYER X</div>
+                <div class="grid-container" id="grid"></div>
+
+                <div class="button" style="display: none;" id="restart">
+                        <button onclick="restart()">PLAY AGAIN</button>
+                </div>
+
+        </div>
+       
+        
+
+</body>
+</html>
