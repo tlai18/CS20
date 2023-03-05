@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+                const jump = () => {
+                        buttonText = document.getElementById("buttonID").innerHTML;
+                        inputOne = document.getElementById("1").value;
+                        inputTwo = document.getElementById("2").value;
+
+                        if (buttonText == "JUMP &gt;") {
+                                document.getElementById("buttonID").innerHTML = "&lt; JUMP";
+                                document.getElementById("2").value = inputOne;
+                        } else if (buttonText == "&lt; JUMP") {
+                                document.getElementById("buttonID").innerHTML = "JUMP &gt;";
+                                document.getElementById("1").value = inputTwo;
+                        } else {
+                                alert("ERROR");
+                        }
+                }
+        </script>
+</head>
+<body>
+        <form>
+                <input id="1" type="text">	
+                <button type="button" id="buttonID" onclick="jump()">JUMP &gt;</button>
+                <input id='2' type="text">	
+        </form>
+</body>
+</html>

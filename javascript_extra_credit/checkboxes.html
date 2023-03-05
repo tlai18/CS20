@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script language="javascript">
+                function checkAll()
+                {
+                        var boxes = document.getElementsByName("box");
+                        if (document.getElementById("b1").checked) {
+                                boxes.forEach(num => {
+                                        num.checked = true;
+                                });
+                                document.getElementById("l1").innerHTML = "Uncheck All";
+                        }
+                        else {
+                                boxes.forEach(num => {
+                                        num.checked = false;
+                                });
+                                document.getElementById("l1").innerHTML = "Check All";
+                        }
+                }
+        </script>
+</head>
+<body>
+        <input type="checkbox" id="b1" name="box" onclick="checkAll()">
+        <label for="b1" id="l1">Check All</label><br>
+        <input type="checkbox" id="b2" name="box">
+        <label for="b2">Red</label><br>
+        <input type="checkbox" id="b3" name="box">
+        <label for="b3">Orange</label><br>
+        <input type="checkbox" id="b4" name="box">
+        <label for="b3">Yellow</label><br>
+        <input type="checkbox" id="b5" name="box">
+        <label for="b3">Green</label><br>
+</body>
+</html>

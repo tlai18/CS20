@@ -1,0 +1,45 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery Try It - Completed</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script language="javascript">
+	images = 
+        [
+                "cat1.jpg", 
+                "cat2.jpg",
+                "cat3.jpg", 
+                "cat4.jpg", 
+                "cat5.jpg"
+        ]
+	var imageIndex=0;
+	
+	$(document).ready(function() {
+		$("#startSlides").click(slideShow);
+		$("#stopSlides").click(function()
+			{
+				$("#slide img").stop().fadeIn();
+			}
+		);
+	})
+	function slideShow()
+	{
+		$("#slide img").fadeOut(2000,nextSlide);
+	}
+	function nextSlide()
+	{
+		imageIndex++;
+		imageIndex= imageIndex== images.length?0: imageIndex;
+		$("#slide img").attr("src", "images/"+images[imageIndex]);
+		$("#slide img").fadeIn(2000,slideShow);
+	}
+	</script>
+</head>
+<body>
+	<div id='slide'>
+		<img src="images/cat1.jpg" />
+	</div>
+	<input type= "button" id="startSlides" value="Start Slide Show">
+	<input type= "button" id="stopSlides" value="Stop Slide Show">
+</body>
+</html>
