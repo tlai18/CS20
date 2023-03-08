@@ -4,91 +4,91 @@
                         {
                                 "artists": ["Taylor Swift"],
                                 "title": 22,
-                                "genres": ["Pop"],
+                                "genre": ["Pop"],
                                 "year": 2012
                         },
                         {
                                 "artists": ["Lorde"],
                                 "title": "Team",
-                                "genres": ["Pop"],
+                                "genre": ["Pop"],
                                 "year": 2013
                         },
                         {
                                 "artists": ["Ariana Grande"],
                                 "title": "One Last Time",
-                                "genres": ["Pop"],
+                                "genre": ["Pop"],
                                 "year": 2014
                         },
                         {
                                 "artists": ["Ed Sheeran"],
                                 "title": "The A Team",
-                                "genres": ["Pop"],
+                                "genre": ["Pop"],
                                 "year": 2010
                         },
                         {
                                 "artists": ["Juice WRLD"],
                                 "title": "Lucid Dreams",
-                                "genres": ["Hip hop"],
+                                "genre": ["Hip hop"],
                                 "year": 2018
                         },
                         {
                                 "artists": ["XXXTENTACION"],
                                 "title": "SAD!",
-                                "genres": ["Hip hop"],
+                                "genre": ["Hip hop"],
                                 "year": 2018
                         },
                         {
                                 "artists": ["Travis Scott"],
                                 "title": "Goosebumps",
-                                "genres": ["Hip hop"],
+                                "genre": ["Hip hop"],
                                 "year": 2016
                         },
                         {
                                 "artists": ["Lil Uzi Vert"],
                                 "title": "XO Tour Llif3",
-                                "genres": ["Hip hop"],
+                                "genre": ["Hip hop"],
                                 "year": 2017
                         },
                         {
                                 "artists": ["Bad Bunny"],
                                 "title": "Vete",
-                                "genres": ["Latin", "Hip Hop"],
+                                "genre": ["Latin", "Hip Hop"],
                                 "year": 2020
                         },
                         {
                                 "artists": ["Bad Bunny", "Chencho Corleone"],
                                 "title": "Me Porto Bonito",
-                                "genres": ["Latin", "Hip Hop"],
+                                "genre": ["Latin", "Hip Hop"],
                                 "year": 2022
                         },
                         {
                                 "artists": ["Juice WRLD"],
                                 "title": "All Girls Are The Same",
-                                "genres": ["Hip-hop"],
+                                "genre": ["Hip-hop"],
                                 "year": 2018
                         }, 
                         {
                                 "artists": ["Juice WRLD"],
                                 "title": "Robbery",
-                                "genres": ["Hip-hop"],
+                                "genre": ["Hip-hop"],
                                 "year": 2019
                         }, 
                         {
                                 "artists": ["Juice WRLD", "Lil Uzi Vert"],
                                 "title": "Wasted",
-                                "genres": ["Hip-hop"],
+                                "genre": ["Hip-hop"],
                                 "year": 2018
                         }, 
                         {
                                 "artists": ["Juice WRLD"],
                                 "title": "Armed and Dangerous",
-                                "genres": ["Hip-hop"],
+                                "genre": ["Hip-hop"],
                                 "year": 2018
                         }, 
                         {
                                 "artists": ["Juice WRLD"],
                                 "title": "Hurt Me",
-                                "genres": ["Hip-hop"],
+                                "genre": ["Hip-hop"],
                                 "year": 2018
                         }
                 ]
