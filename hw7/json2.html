@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Song Genre Filter</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+        <script>
+                
+        </script>
+</head>
+<body>
+        <h1>Song Genre Filter</h1>
+
+	<!-- Dropdown list for genres -->
+        <form>
+                <label for="genre">Select a genre:</label>
+                <select id="genre">
+                        <option value="all">All Genres</option>
+                </select>
+                <button type="button" onclick="filterSongs()">Filter</button>
+        </form>
+
+	<!-- Container for song titles -->
+	<div id="songList">
+		<h2>All Songs:</h2>
+		<ul>
+		</ul>
+	</div>
+
+	<script>
+		// Load the JSON file with song data
+                $.get("https://tlai18.github.io/CS20/hw7/data.json", function(data) {
+                        const genres = new Set();
+
+                        // Get all the genres
+                        data.songs.forEach(song => {
+                                song.genre.forEach(genre => {
+                                        genres.add(genre);
+                                })
+			});
+
+                        const select = document.getElementById("genre");
+                        genres.forEach(genre => {
+                                const option = document.createElement("option");
+                                option.value = genre;
+                                option.text = genre;
+                                select.add(option);
+                        });
+                        displaySongs(data.songs);
+                });
+		
+
+		const filterSongs = () => {
+			// Get the selected genre from the dropdown list
+			const select = document.getElementById('genre');
+			const selectedGenre = select.value;
+
+			// Load the JSON file with song data
+                        $.get("https://tlai18.github.io/CS20/hw7/data.json", function(data)
+                        {
+                                // Filter the songs on genre
+                                const filteredSongs = (selectedGenre == 'all') ? data.songs : data.songs.filter(song => 
+                                {
+                                        return song.genre.includes(selectedGenre);
+                                });
+                                displaySongs(filteredSongs);
+                        });
+		}
+
+                // Display songs
+		const displaySongs = (songs) => {
+			// Clear the existing list of songs
+			const list = document.querySelector('#songList ul');
+			list.innerHTML = '';
+
+			// Add each song title to the list
+			songs.forEach(song => {
+				const item = document.createElement('li');
+				item.textContent = song.title;
+				list.appendChild(item);
+			});
+		}
+	</script>
+</body>
+</html>
